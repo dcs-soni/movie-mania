@@ -2,3 +2,40 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 5vh;
+  padding: 1rem;
+  /* background-color: #628395; */
+}
+
+.txt-content {
+  margin: 2rem;
+  font-size: 1.2rem;
+}
+
+.heading {
+  margin: 3vh;
+  font-size: 3.5vh;
+}
+
+.button {
+  margin: 0.2rem;
+  width: 20%;
+  height: 4vh;
+  border-radius: 0.5rem;
+  font-size: 2vh;
+}
+
+@media only screen and (min-width: 1080px) {
+  .button {
+    width: 12vh;
+    margin: 1rem;
+  }
+}
