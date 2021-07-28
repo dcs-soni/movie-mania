@@ -4,11 +4,11 @@ import "./styles.css";
 const movieList = {
   action: [
     {
-      Name: "Black Widow",
+      Name: "The Tomorrow War",
       Description:
-        "Natasha Romanoff confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises.",
-      Ratings: "6.9⭐",
-      Poster: "https://wallpapercave.com/wp/wp8124969.jpg"
+        "A family man is drafted to fight in a future war where the fate of humanity relies on his ability to confront the past.",
+      Ratings: "6.6⭐",
+      Poster: "https://wallpapercave.com/wp/wp9456609.jpg"
     },
 
     {
@@ -61,7 +61,6 @@ const movieList = {
         "After moving to a new town, two brothers discover that the area is a haven for vampires.",
       Ratings: "7.3⭐",
       Poster: "https://wallpapercave.com/wp/wp3996664.jpg"
-
     },
 
     {
@@ -70,7 +69,6 @@ const movieList = {
         "A rogue artificial intelligence kidnaps the son of famed basketball player LeBron James, who then has to work with Bugs Bunny to win a basketball game.",
       Ratings: "4.4⭐",
       Poster: "https://wallpapercave.com/wp/wp8487455.png"
-
     },
 
     {
@@ -79,8 +77,8 @@ const movieList = {
         "On the Italian Riviera, an unlikely but strong friendship grows between a human being and a sea monster disguised as a human.",
       Ratings: "7.5⭐",
       Poster: "https://wallpapercave.com/wp/wp9328499.jpg"
-
-    }],
+    }
+  ],
 
   thriller: [
     {
@@ -89,7 +87,6 @@ const movieList = {
         "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan.",
       Ratings: "8.6⭐",
       Poster: "https://wallpapercave.com/wp/wp5510252.jpg"
-
     },
 
     {
@@ -98,7 +95,6 @@ const movieList = {
         "A detective investigates the death of a patriarch of an eccentric, combative family.",
       Ratings: "7.9⭐",
       Poster: "https://wallpapercave.com/wp/wp4969639.jpg"
-
     },
 
     {
@@ -107,8 +103,8 @@ const movieList = {
         "A skilled London police officer is transferred to a small town with a dark secret.",
       Ratings: "7.8⭐",
       Poster: "https://wallpapercave.com/wp/wp5268883.jpg"
-
-    }]
+    }
+  ]
 };
 
 const movieGenres = Object.keys(movieList);
@@ -117,41 +113,36 @@ export default function App() {
   const [genre, setGenre] = useState(movieList.action);
 
   function clickHandler(genre) {
-    var typeGenre = movieGenres[genre];
+    var typeGenre = movieList[genre];
     setGenre(typeGenre);
   }
 
-  function getMoviesList(movies) {
-    var name = movies.Name;
-    var imageURL = movies.image;
-    var description = movies.description;
-    var rating = movies.rating;
+  function getMoviesList(movie) {
+    var name = movie.Name;
+    var imageURL = movie.Poster;
+    var description = movie.Description;
+    var rating = movie.Ratings;
 
-    var movieLists = (
+    var movies = (
       <li>
-        <img src={ imageURL } alt="movie-poster" />
+        <img src={imageURL} alt="movie-poster" />
         <div style={{ padding: "0rem 1rem" }}>
-          <h3 style={{ marginBottom: "0.5rem" }}>{name}</h3>
+          <h3>{name}</h3>
           {/* <small style={{ fontSize: "0.7rem" }}>{rating}</small> */}
-          <p style={{ fontSize: "0.9rem" }}>{description}</p>
-          <p>{rating}</p>
+          <p className="description">{description}</p>
+          <p className="rating">{rating}</p>
         </div>
       </li>
     );
 
-    return movieLists;
+    return movies;
   }
 
   return (
     <div className="App">
       <h1>Movie Mania</h1>
       <div className="txt-content">
-        <p>
-          {/* {" "} */}
-          Find the best movies of every genres you should watch once in a
-          lifetime
-        </p>
-        <div class="heading">Movie genres</div>
+        <p>Find the best movies of every genres one must watch.</p>
       </div>
 
       <div>
@@ -168,9 +159,8 @@ export default function App() {
         })}
       </div>
       <ul>
-        { movieLists.map((typeGenre) => {
-            return getMoviesList(typeGenre);
-        }
+        {genre.map((movie) => {
+          return getMoviesList(movie);
         })}
       </ul>
     </div>
