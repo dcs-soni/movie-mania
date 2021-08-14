@@ -125,10 +125,9 @@ export default function App() {
 
     var movies = (
       <li>
-        <img src={imageURL} alt="movie-poster" />
-        <div style={{ padding: "0rem 1rem" }}>
+        <div style={{ padding: "0rem" }}>
           <h3>{name}</h3>
-          {/* <small style={{ fontSize: "0.7rem" }}>{rating}</small> */}
+          <img src={imageURL} alt="movie-poster" />
           <p className="description">{description}</p>
           <p className="rating">{rating}</p>
         </div>
