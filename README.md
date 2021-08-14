@@ -13,4 +13,4 @@
 
 #### Tech Stack
 
-<img src="img/html.svg" width="50" height="50" /> &nbsp; <img src="img/css.svg" width="50" height="50" /> &nbsp; <img src="img/javascript.svg" width="50" height="50" /> &nbsp; <img src="img/netlify.svg" width="50" height="50" />
+<img src="public/img/react.svg" width="50" height="50" /> &nbsp; <img src="public/img/css.svg" width="50" height="50" /> &nbsp; <img src="public/img/javascript.svg" width="50" height="50" /> &nbsp; <img src="public/img/netlify.svg" width="50" height="50" />
